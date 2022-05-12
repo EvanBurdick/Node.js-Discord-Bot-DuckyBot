@@ -28,30 +28,21 @@ Using a node.js terminal ([download](https://nodejs.org/en/download/)), change t
 Note: You can remove commands that you do not want by simply deleting the .js file for the command in the commands folder.
 (all commands below are assuming the prefix is set to '!')
 
-- ascii (prints message in ascii bubble characters)
-
-usage: ```!ascii <message>```
+- ascii (prints message in ascii bubble characters) 
+   - usage: ```!ascii <message>```
 - cat (sends a random image of a cat)
- 
-usage: ```!cat```
+   - usage: ```!cat```
 - dog (sends a random image of a dog)
-
-usage: ```!dog```
+   - usage: ```!dog```
 - DuckyBot (prints information about the bot)
-
-usage: ```!duckybot```
+   - usage: ```!duckybot```
 - emoji (prints a list of all of the server's added emojis)
-
-usage: ```!emoji``` or ```!emoji list```
+   - usage: ```!emoji``` or ```!emoji list```
 - help (displays a list of the bot's commands)
-
-usage: ```!help``` or ```!help <command name>```
+   - usage: ```!help``` or ```!help <command name>```
 - say (display's a message as if the bot had said it)
-
-usage: ```!say <message>```
+   - usage: ```!say <message>```
 - server (displays information about the server)
-
-usage: ```!server```
+   - usage: ```!server```
 - weather (displays weather information given a location as an argument)
-
-usage: ```!weather <location>```
+   - usage: ```!weather <location>```
