@@ -22,7 +22,14 @@ Once finished, click the Copy button under Generated URL. Paste this into a brow
 If you have done everything correctly, you should now see your bot in the discord server. (should be offline at this point)
 
 ## Starting the bot
-Using a node.js terminal ([download](https://nodejs.org/en/download/)), change the current directory to wherever you stored the files. 
+For either method below, make sure you have node.js installed on your machine. ([download](https://nodejs.org/en/download/))
+
+### Method 1: RUN.bat file (Automatic)
+There is an included .bat file "RUN.bat" which will automatically install the npm dependencies as well as start the serer. If you already have the dependencies installed, this will simply just run the bot.
+
+### Method 2: Manual Installation using package.json
+
+Using a node.js terminal, change the current directory to wherever you stored the files. 
 
 Run the command ```npm install``` . This will install the needed dependencies that are listed in the "package.json" file. You can remove the ones that I used for some of my commands, or you can add your own.
 
