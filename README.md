@@ -23,6 +23,11 @@ If you have done everything correctly, you should now see your bot in the discor
 Using a node.js terminal ([download](https://nodejs.org/en/download/)), change the current directory to wherever you stored the files. Then, run the following command: ```node index.js```. At this point, you will see a message in the terminal indicating the bot is ready. The bot is now running, and you should see the bot change from offline to online in the server!
 
 ## Adding Commands
+- Prefix Commands:
+   - Add the name of the command as a .js file in the "commands" folder. (for example, the "help" command is "help.js" in the commands folder. Then, you can add functionality to the file. (I reccommend following the commandTemplate.js file which I have included).
+
+- Non Prefix Command:
+   - Go to the noPrefix.js file in the commands folder. Add your command functionality in the switch method. 
 
 ## Some added Commands 
 Note: You can remove commands that you do not want by simply deleting the .js file for the command in the commands folder.
