@@ -26,7 +26,7 @@ Using a node.js terminal ([download](https://nodejs.org/en/download/)), change t
 - Prefix Commands:
    - Add the name of the command as a .js file in the "commands" folder. (for example, the "help" command is "help.js" in the commands folder. Then, you can add functionality to the file. (I reccommend following the commandTemplate.js file which I have included).
 
--Non Prefix Command:
+- Non Prefix Command:
    - Go to the noPrefix.js file in the commands folder. Add your command functionality in the switch method. 
 
 ## Some added Commands 
