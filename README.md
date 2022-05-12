@@ -8,14 +8,12 @@ DuckyBot is a multi-purpose bot designed to make adding extra functionality as e
 ## Setup
 First, set up the bot profile using Discord's [devloper portal](https://discord.com/developers/applications). Select "New Application", and pick a name for the bot. 
 
-Then, you can change the bot's information, including the description, tags, and more.
+Go to the "Bot" tab and Click the "Add Bot" button under build-a-bot.
 
-Copy the public key, and paste it into the config.json file, under the "token" field. Replace the "XXX" in the field with the copied key. In that same file, you can pick a prefix for your bot's commands as well, but make sure to limit it to a single character. If you have multiple bots in your server, you are going to want to pick a prefix that is not already taken by another bot.
+Click reset token, and paste it into the config.json file, under the "token" field. Replace the "XXX" in the field with the copied key. In that same file, you can pick a prefix for your bot's commands as well, but make sure to limit it to a single character. If you have multiple bots in your server, you are going to want to pick a prefix that is not already taken by another bot.
 
 ## Inviting the bot to server
 In order to get the bot in your server, go to the developer portal and choose your bot's application. 
-
-Go to the "Bot" tab and Click the "Add Bot" button under build-a-bot.
 
 Then, under the OAuth2 tab, go to the URL Generator section. Under Scopes, select the "bot" option. A bot permissions field will appear underneath, and select "administrator". If you want the bot to be limited with it's permissions, you can instead manually select the options you wish. 
 
@@ -24,7 +22,11 @@ Once finished, click the Copy button under Generated URL. Paste this into a brow
 If you have done everything correctly, you should now see your bot in the discord server. (should be offline at this point)
 
 ## Starting the bot
-Using a node.js terminal ([download](https://nodejs.org/en/download/)), change the current directory to wherever you stored the files. Then, run the following command: ```node index.js```. At this point, you will see a message in the terminal indicating the bot is ready. The bot is now running, and you should see the bot change from offline to online in the server!
+Using a node.js terminal ([download](https://nodejs.org/en/download/)), change the current directory to wherever you stored the files. 
+
+Run the command ```npm install``` . This will install the needed dependencies that are listed in the "package.json" file. You can remove the ones that I used for some of my commands, or you can add your own.
+
+Then, run the following command: ```node index.js```. At this point, you will see a message in the terminal indicating the bot is ready. The bot is now running, and you should see the bot change from offline to online in the server!
 
 ## Adding Commands
 - Prefix Commands:
