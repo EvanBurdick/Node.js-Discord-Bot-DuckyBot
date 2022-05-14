@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
     const embed = new RichEmbed()
       .setDescription('Bot Commands')
       .setColor(0xFFFF00)
-      .addField(commandsArr," ‏‏‎", inline= true)
+      .addField(commandsArr,"‏‏‎", inline= true)
       .setFooter("Also use !help <command name> to learn about command.");
     message.channel.send(embed);
     });
@@ -31,9 +31,8 @@ exports.run = async (client, message, args) => {
       a.then(function(a){
         if(a){ // if it is not undefined
           const embed = new RichEmbed()
-          .setTitle(cmd + ' command information')
           .setColor(0xFFFF00)
-          .addField(a," ‏‏‎",inline= true);
+          .addField(cmd + ' command description:', a, true);
           message.channel.send(embed);
         }
       });
@@ -44,6 +43,6 @@ exports.run = async (client, message, args) => {
     }
   } 
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
   return "Displays all of the available commands, or gives information about a command given the command name as an argument";
 }

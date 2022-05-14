@@ -39,6 +39,6 @@ exports.run = async (client, message, args) => {
     }
     
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return "Diaplays weather information given a location!";
 }

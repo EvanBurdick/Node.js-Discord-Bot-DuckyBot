@@ -31,7 +31,8 @@ client.on('message', message => {
 		console.log(`${message.author.tag} ran the command ${cmd}`);
 		}
 	}
-	else{ //see if the message contains a prefix-less command
+
+	else{ //see if the message contains a prefix-less command (also checks for language filter)
 		prefixlessCommand.run(message);
 	}
 })

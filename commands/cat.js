@@ -11,6 +11,6 @@ SomeRandomCat.getCat()
         return;
     });    
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return "Diaplays a random image of a cat";
 }

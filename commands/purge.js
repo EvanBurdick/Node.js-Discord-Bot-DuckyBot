@@ -20,6 +20,6 @@ exports.run = async (client, message, args) => {
                 .catch(error => message.channel.send(`Error: ${error}`)); 
   */              
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return "WIP";
 }

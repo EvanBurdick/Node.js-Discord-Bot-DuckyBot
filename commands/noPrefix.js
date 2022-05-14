@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 exports.run = async (message) => {
     let msg = message.content.toUpperCase();
 
+    ///////////////////////////
+    //    Secret "Commands"  //
+    ///////////////////////////
     switch(msg){
     case 'F':
         message.channel.send('F');
@@ -16,7 +19,17 @@ exports.run = async (message) => {
     default:
     }
 
+    //////////////////////
+    //  Filter Words    //
+    //////////////////////
+    var profanities = ["BADWORD", "FRICK"];
+    for (x = 0; x < profanities.length; x++) {
+        if (msg.includes(profanities[x])){
+            await message.reply("You cannot say that here!");     
+            message.delete();
+        }
+    }
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return; //not meant to be displayed as a command
 }

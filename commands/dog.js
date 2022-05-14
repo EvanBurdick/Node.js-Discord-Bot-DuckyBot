@@ -7,6 +7,6 @@ exports.run = async (client, message, args) => {
         message.channel.send(url);
     })
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return "Diaplays a random image of a dog";
 }

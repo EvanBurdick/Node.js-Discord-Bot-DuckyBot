@@ -12,6 +12,6 @@ exports.run = async (client, message, args) => {
         message.channel.send((emojiList).replace(/,/g, ''));
     }
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return "Diaplays all added emojis in the server";
 }

@@ -12,6 +12,6 @@ exports.run = async (client, message, args,) => {
     .addField('You can use the command `'+prefix+'help` to get a list of usable commands.',' ‏‏‎ ')
   message.channel.send(embed);
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
   return "Diaplays information about this bot";
 }

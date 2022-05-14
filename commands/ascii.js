@@ -16,6 +16,6 @@ exports.run = async (client, message, args, ops) => {
     message.channel.send("Correct usage: ```!ascii <argument>```");
     }   
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
 return "Displays message in an ascii font!";
 }

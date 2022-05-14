@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
      
     */
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
    return "WIP";
 }
 

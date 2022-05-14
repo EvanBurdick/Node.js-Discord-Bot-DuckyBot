@@ -18,6 +18,6 @@ exports.run = async (client, message, args) => {
 
   message.channel.send({embed});
 }
-exports.info = async(client, message, args, ops) => {
+exports.info = async() => {
     return "Diaplays information about the server";
 } 
