@@ -64,4 +64,4 @@ Note: You can remove commands that you do not want by simply deleting the .js fi
    - usage: ```!server```
 - weather (displays weather information given a location as an argument)
    - usage: ```!weather <location>```
->>>>>>> 402fa9d1d662dcea39300d3614b6b8ffd0040c2c
+
