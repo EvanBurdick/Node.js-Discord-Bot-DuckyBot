@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 var weather = require('weather-js');
-const { Client, RichEmbed } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
         var current = result[0].current;
         var location = result[0].location;
 
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
             .setDescription(`**${current.skytext}**`)
             .setAuthor(`Weather for ${current.observationpoint}`)
             .setThumbnail(current.imageUrl)

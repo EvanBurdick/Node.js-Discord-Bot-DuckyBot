@@ -1,23 +1,86 @@
-const Discord = require('discord.js');
-const { Client, RichEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
-exports.run = async (client, message, args) => {
-    const owner = await client.fetchUser(message.guild.ownerID);
-    let sender = message.author;
-    const embed = new Discord.RichEmbed()
-  .setAuthor(message.guild.name, message.guild.iconURL)
-  .setColor(0xFFFF00)
-  .setDescription(`Owner: ${owner.toString()}`)
-  .addField('Member Count', `${message.guild.memberCount - message.guild.members.filter(m=>m.user.bot).size} (${message.guild.members.filter(m=>m.user.bot).size} bots)`, true)
-  .addField('AFK Timeout', `${message.guild.afkTimeout / 60} minutes`, true)
-  .addField('AFK Channel', `${message.guild.afkChannelID === null ? 'No AFK Channel' : client.channels.get(message.guild.afkChannelID).name} (${message.guild.afkChannelID === null ? '' : message.guild.afkChannelID})`, true)
-  .addField('Created', message.guild.createdAt.toLocaleString(), true)
-  .addBlankField(true)
-  .setTimestamp()
-  .setFooter(sender.username, sender.avatarURL);
+module.exports = {
+	name: 'server-info',
+	category: 'extra',
+	run: async (client, message, args) => {
+		let region;
+		switch (message.guild.region) {
+		case 'europe':
+			region = '🇪🇺 Europe';
+			break;
+		case 'us-east':
+			region = '🇺🇸 us-east';
+			break;
+		case 'us-west':
+			region = '🇺🇸 us-west';
+			break;
+		case 'us-south':
+			region = '🇺🇸 us-south';
+			break;
+		case 'us-central':
+			region = '🇺🇸 us-central';
+			break;
+		default:
+			region = 'Unknown';
+		}
 
-  message.channel.send({embed});
-}
-exports.info = async() => {
-    return "Diaplays information about the server";
-} 
+		const embed = new MessageEmbed()
+			.setThumbnail(message.guild.iconURL({ dynamic: true }))
+			.setColor('#f3f3f3')
+			.setTitle(`${message.guild.name} server stats`)
+			.addFields(
+				{
+					name: 'Owner: ',
+					value: message.guild.owner.user.tag,
+					inline: true,
+				},
+				{
+					name: 'Members: ',
+					value: `There are ${message.guild.memberCount} users`,
+					inline: true,
+				},
+				{
+					name: 'Members Online: ',
+					value: `There are ${message.guild.members.cache.filter((m) => m.user.presence.status === 'online').size} users online`,
+					inline: true,
+				},
+				{
+					name: 'Total Bots: ',
+					value: `There are ${message.guild.members.cache.filter((m) => m.user.bot).size} bots`,
+					inline: true,
+				},
+				{
+					name: 'Creation Date: ',
+					value: message.guild.createdAt.toLocaleDateString('en-us'),
+					inline: true,
+				},
+				{
+					name: 'Roles Count: ',
+					value: `There are ${message.guild.roles.cache.size} roles in this server.`,
+					inline: true,
+				},
+				{
+					name: '🗺 Region: ',
+					value: region,
+					inline: true,
+				},
+				{
+					name: 'Verified: ',
+					value: message.guild.verified ? 'Server is verified' : 'Server isn\'t verified',
+					inline: true,
+				},
+				{
+					name: 'Boosters: ',
+					value: message.guild.premiumSubscriptionCount >= 1 ? `There are ${message.guild.premiumSubscriptionCount} Boosters` : 'There are no boosters',
+					inline: true,
+				},
+				{
+					name: 'Emojis: ',
+					value: message.guild.emojis.cache.size >= 1 ? `There are ${message.guild.emojis.cache.size} emojis!` : 'There are no emojis',
+					inline: true,
+				},
+			);
+		return message.channel.send(embed);
+	},
+};

@@ -1,7 +1,7 @@
 const testFolder = './commands/';
 const fs = require('fs');
 const Discord = require('discord.js');
-const { Client, RichEmbed } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args) => {
   if(args == 0){
@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
     });
     commandsArr = commands.split(',');
   
-    const embed = new RichEmbed()
+    const embed = new MessageEmbed()
       .setDescription('Bot Commands')
       .setColor(0xFFFF00)
       .addField(commandsArr,"‏‏‎", inline= true)
@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
       let a = commandFile.info();
       a.then(function(a){
         if(a){ // if it is not undefined
-          const embed = new RichEmbed()
+          const embed = new MessageEmbed()
           .setColor(0xFFFF00)
           .addField(cmd + ' command description:', a, true);
           message.channel.send(embed);

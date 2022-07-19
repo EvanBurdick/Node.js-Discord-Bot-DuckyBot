@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
-const { Client, RichEmbed } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 const {prefix} = require('../config.json');
 
 exports.run = async (client, message, args,) => {
   let bicon = client.user.displayAvatarURL;  
-  const embed = new RichEmbed()
+  const embed = new MessageEmbed()
     .setDescription('Bot Information')
     .setColor(0xFFFF00)
     .setThumbnail(bicon)
